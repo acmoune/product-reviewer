@@ -1,0 +1,10 @@
+{
+    "namespace": "common.avro.reviews.events",
+    "type": "record",
+    "name": "ReviewRejected",
+    "fields": [
+        {"name": "task_id", "type": "string"},
+        {"name": "review", "type": "common.avro.reviews.entities.Review"},
+        {"name": "failureMessage", "type": "string"}
+    ]
+}

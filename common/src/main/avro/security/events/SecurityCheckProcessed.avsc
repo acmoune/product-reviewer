@@ -1,0 +1,11 @@
+{
+    "namespace": "common.avro.security.events",
+    "type": "record",
+    "name": "SecurityCheckProcessed",
+    "fields": [
+        {"name": "task_id", "type": "string"},
+        {"name": "review", "type": "common.avro.reviews.entities.Review"},
+        {"name": "status", "type": "string"},
+        {"name": "failureMessage", "type": ["null", "string"], "default": null}
+    ]
+}

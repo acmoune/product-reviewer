@@ -1,0 +1,16 @@
+{
+    "namespace": "common.avro.statistics.entities",
+    "type": "record",
+    "name": "ProductStatistic",
+    "fields": [
+        {"name": "product_id", "type": "string"},
+        {"name": "product_title", "type": "string"},
+        {"name": "count_one", "type": "int"},
+        {"name": "count_two", "type": "int"},
+        {"name": "count_three", "type": "int"},
+        {"name": "count_four", "type": "int"},
+        {"name": "count_five", "type": "int"},
+        {"name": "total_reviews", "type": "long"},
+        {"name": "total_rating", "type": "long"}
+    ]
+}

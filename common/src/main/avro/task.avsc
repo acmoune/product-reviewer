@@ -1,0 +1,13 @@
+{
+    "namespace": "common.avro",
+    "type": "record",
+    "name": "Task",
+    "fields": [
+        {"name": "task_id", "type": "string"},
+        {"name": "resource_id", "type": "string"},
+        {"name": "status", "type": "string"},
+        {"name": "error_message", "type": "string"},
+        {"name": "created_at", "type": "long"},
+        {"name": "updated_at", "type": ["null", "long"], "default": null}
+    ]
+}

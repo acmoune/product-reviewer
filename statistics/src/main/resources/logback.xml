@@ -1,0 +1,20 @@
+<configuration>
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>${application.home:-.}/logs/application.log</file>
+    <encoder>
+      <pattern>%date [%level] from %logger in %thread - %message%n%xException</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [Thread: %thread][%level] %logger{25} - %message%n%xException{10}</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="statistics-app" level="DEBUG" />
+
+  <root level="OFF">
+    <appender-ref ref="FILE" />
+  </root>
+</configuration>

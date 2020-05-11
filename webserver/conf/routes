@@ -1,0 +1,7 @@
+POST            /api/products/:productId/reviews                controllers.ReviewController.addReview(productId: String)
+GET             /api/products/:productId/reviews                controllers.ReviewController.getReviewsByProduct(productId: String)
+GET             /api/products/:productId/reviews/:reviewId      controllers.ReviewController.getReview(productId: String, reviewId: String)
+GET             /api/tasks/:taskId                              controllers.TaskController.getTask(taskId: String)
+GET             /api/products/:productId/stats                  controllers.ReviewController.getStats(productId: String)
+GET             /reviews-socket                                 controllers.ReviewController.reviewsSocket
+GET             /stats-socket/:productId                        controllers.ReviewController.statsSocket(productId: String)

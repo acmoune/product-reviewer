@@ -1,0 +1,9 @@
+{
+    "namespace": "common.avro.reviews.events",
+    "type": "record",
+    "name": "ReviewApproved",
+    "fields": [
+        {"name": "task_id", "type": "string"},
+        {"name": "review", "type": "common.avro.reviews.entities.Review"}
+    ]
+}

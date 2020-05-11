@@ -1,0 +1,26 @@
+{
+  "name": "product-reviewer-cassandra-sink",
+  "config": {
+    "connector.class": "com.datastax.kafkaconnector.DseSinkConnector",
+    "tasks.max": "1",
+    "topics": "reviews-changelog,tasks-changelog,stats-changelog",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "value.converter.schema.registry.url": "http://localhost:8081",
+    "value.converter.value.subject.name.strategy": "io.confluent.kafka.serializers.subject.TopicRecordNameStrategy",
+    "offset.flush.interval.ms": 500,
+
+    "contactPoints": "localhost",
+    "loadBalancing.localDc": "datacenter1",
+    "port": 9042,
+
+    "topic.reviews-changelog.proreviewer.reviews_by_product.mapping": "product_id=value.product_id, created_at=value.created_at, status=value.status, rating=value.rating, review_id=value.review_id, content=value.content, product_name=value.product_name, user_email=value.user_email, user_id=value.user_id, username=value.username",
+    "topic.reviews-changelog.proreviewer.reviews_by_product.consistencyLevel": "LOCAL_ONE",
+
+    "topic.tasks-changelog.proreviewer.tasks.mapping": "task_id=value.task_id, resource_id=value.resource_id, status=value.status, error_message=value.error_message, created_at=value.created_at, updated_at=value.updated_at",
+    "topic.tasks-changelog.proreviewer.tasks.consistencyLevel": "LOCAL_ONE",
+
+    "topic.stats-changelog.proreviewer.stats.mapping": "product_id=value.product_id, product_title=value.product_title, count_one=value.count_one, count_two=value.count_two, count_three=value.count_three, count_four=value.count_four, count_five=value.count_five, total_reviews=value.total_reviews, total_rating=value.total_rating",
+    "topic.stats-changelog.proreviewer.stats.consistencyLevel": "LOCAL_ONE"
+  }
+}

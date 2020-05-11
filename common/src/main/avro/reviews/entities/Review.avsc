@@ -1,0 +1,24 @@
+{
+    "namespace": "common.avro.reviews.entities",
+    "type": "record",
+    "name": "Review",
+    "fields": [
+        {"name": "product_id", "type": "string"},
+        {"name": "created_at", "type": "long"},
+        {
+            "name": "status",
+            "type": {
+                "type": "enum",
+                "name": "ReviewStatus",
+                "symbols" : ["PROCESSING", "APPROVED", "REJECTED"]
+            }
+        },
+        {"name": "review_id", "type": "string"},
+        {"name": "rating", "type": "int", "doc": "review value, from 1 to 5"},
+        {"name": "product_name", "type": "string"},
+        {"name": "content", "type": ["null", "string"], "default": null, "doc": "Review text if provided"},
+        {"name": "user_id", "type": "string"},
+        {"name": "username", "type": "string"},
+        {"name": "user_email", "type": "string"}
+    ]
+}
