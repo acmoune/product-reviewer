@@ -122,7 +122,7 @@ You can adjust the **Env** variables to match your environment. You can see the 
 /path/to/docker-image/java/jdk-11.0.7_linux-x64_bin.tar.gz
 ```
 
-By the end of this step, you `docker-image` folder most contain two directories: `java` and `src`, and the `Dockerfile`. 
+By the end of this step, your `docker-image` folder most contain two directories: `java` and `src`, and the `Dockerfile`. 
 
 7 - Build the docker image
 
@@ -139,7 +139,7 @@ Again, make sure you went throug the section **Setting the infrastructrue** of t
 docker container run -d --name proreviewer -p 3000:3000 -p 9000:9000 proreviewer:beta
 ```
 
-That is it! If everything went well and all the configurations are corrects, you should access the application on **http//localhost:3000**
+That is it! If everything went well and all the configurations are corrects, you should access the application on **http://localhost:3000**
 
 Do not hesitate to open an issue if needed.
 
