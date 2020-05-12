@@ -36,10 +36,6 @@ mkdir /path/to/docker-image/src
 3 - build the client, and copy it to the docker-image's src folder
 
 ```sh
-cd product-reviewer-client
-npm install
-npm build
-cd ..
 cp -r product-reviewer-client /path/to/docker-image/src/
 ```
 
@@ -93,8 +89,9 @@ RUN add-apt-repository -y ppa:linuxuprising/java && \
 
 RUN source /etc/profile
 COPY src /src/
-WORKDIR /src/proreviewer-client
+WORKDIR /src/product-reviewer-client
 RUN npm install
+RUN npm build
 EXPOSE 9000 3000
 WORKDIR /
 
