@@ -1,6 +1,6 @@
-### Backend part of the source code of the post [Fullstack Kafka](http://fk.com)
+### Backend part of the source code of the post [Fullstack Kafka](hhttps://medium.com/@ironmeiner/fullstack-kafka-e735054adcd6)
 
-You can read [Fullstack Kafka](http://fk.com) as a documentation for this repository, partiulary the section **Building the Microservices**.
+You can read [Fullstack Kafka](https://medium.com/@ironmeiner/fullstack-kafka-e735054adcd6) as a documentation for this repository, partiulary the section **Building the Microservices**.
 
 You can see a video of the example application in action.
 
@@ -11,7 +11,7 @@ You can see a video of the example application in action.
 
 ##### Prerequisites
 
-You need to install Kafka Streaming Platform and Cassandra before starting this guide. Please read the section **Setting the infrastructrue** of the [Fullstack Kafka post](http://fk.com) to setup **Kafka topics**, **Cassandra tables and materialized views**, and **Datastax Sink Connector**. 
+You need to install Kafka Streaming Platform and Cassandra before starting this guide. Please read the section **Setting the infrastructrue** of the [Fullstack Kafka post](https://medium.com/@ironmeiner/fullstack-kafka-e735054adcd6) to setup **Kafka topics**, **Cassandra tables and materialized views**, and **Datastax Sink Connector**. 
 
 ##### Deployment
 
@@ -133,7 +133,7 @@ docker image build -t proreviewer:beta .
 
 8 - Run the application
 
-Again, make sure you went throug the section **Setting the infrastructrue** of the [Fullstack Kafka post](http://fk.com) to setup **Kafka topics**, **Cassandra tables and materialized views**, and **Datastax Sink Connector** before running your container.
+Again, make sure you went throug the section **Setting the infrastructrue** of the [Fullstack Kafka post](https://medium.com/@ironmeiner/fullstack-kafka-e735054adcd6) to setup **Kafka topics**, **Cassandra tables and materialized views**, and **Datastax Sink Connector** before running your container.
 
 ```sh
 docker container run -d --name proreviewer -p 3000:3000 -p 9000:9000 proreviewer:beta
