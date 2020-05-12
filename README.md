@@ -9,9 +9,11 @@ You can see a video of the example application in action.
 
 ### Deployment guide
 
-###### Prerequisites
+##### Prerequisites
 
 You need to install Kafka Streaming Platform and Cassandra before starting this guide. Please read the section **Setting the infrastructrue** to setup **Kafka topics**, **Cassandra tables and materialized views**, and **Datastax Sink Connector**. 
+
+##### Deployment
 
 We recommend using **Docker** for deployment.
 
@@ -24,7 +26,7 @@ git clone git://github.com/acmoune/product-reviewer.git product-reviewer
 git clone git://github.com/acmoune/product-reviewer-client.git product-reviewer-client
 ```
 
-2 - Create the root folder for your docker image, and add a src folder inside it.
+2 - Create the root folder for your docker image, and add a src folder inside.
 
 ```sh
 mkdir /path/to/docker-image
@@ -41,7 +43,7 @@ cd ..
 cp -r product-reviewer-client /path/to/docker-image/src/
 ```
 
-4 - Build each microservice and copy it to the docker-image's src folder
+4 - Build each Microservice and copy it to the docker-image's src folder
 
 ```sh
 cd product-reviewer
@@ -58,11 +60,11 @@ cp -r statistics/target/univrsal /path/to/docker-image/src/statistics
 cp webserver/target/universal/webserver-1.0.0.tgz /path/to/docker-image/src/
 ```
 
-Then, in the `/path/to/docker-image/src/` folder, extract the folder inside `webserver-1.0.0.tgz` and rename it to `webserver`
+Then, from the `/path/to/docker-image/src/` folder, extract the folder from the archive `webserver-1.0.0.tgz` and rename it to `webserver`
 
 By the end of this step, the `/path/to/docker-image/src/` folder most container five directories: `product-reviewer-client`, `security`, `reviews`, `statistics`, and `webserver`.
 
-5 - Create a Dockerfile in `/path/to/docker-image/src/` folder and put this content inside:
+5 - Create a Dockerfile in the `/path/to/docker-image/` folder and put this content inside:
 
 ```sh
 FROM ubuntu:bionic
@@ -112,16 +114,18 @@ ENV CONTACT_POINTS 172.17.0.1:9042
 # ENV LOAD_BALANCING_LOCAL_DATACENTER datacenter1
 # ENV SESSION_KEYSPACE proreviewer
 
-ENTRYPOINT /src/security/stage/bin/security& /src/reviews/stage/bin/reviews& /src/statistics/stage/bin/statistics& /src/webserver/bin/webserver -Dhttp.port=9000& cd /src/proreviewer-client && npm start& wait
+ENTRYPOINT /src/security/stage/bin/security& /src/reviews/stage/bin/reviews& /src/statistics/stage/bin/statistics& /src/webserver/bin/webserver -Dhttp.port=9000& cd /src/product-reviewer-client && npm start& wait
 ```
 
-You can adjust the Env variables to match your environment. You can see the default values on those commented.
+You can adjust the **Env** variables to match your environment. You can see the default values on those commented.
 
-6 - As you can see from the Dockerfile, you must create a java folder in `/path/to/docker-image/src/` folder and put inside JDK, make sur you download the exact same version.
+6 - As you can see from the Dockerfile, you must create a java folder in `/path/to/docker-image/` and put JDK inside. Make sur you download the exact same version.
 
 ```
-/path/to/docker-image/src/java/jdk-11.0.7_linux-x64_bin.tar.gz
+/path/to/docker-image/java/jdk-11.0.7_linux-x64_bin.tar.gz
 ```
+
+By the end of this step, you `docker-image` folder most contain two directories: `java` and `src`, and the `Dockerfile`. 
 
 7 - Build the docker image
 
@@ -138,7 +142,7 @@ Again, make sure you went throug the section **Setting the infrastructrue** to s
 docker container run -d --name proreviewer -p 3000:3000 -p 9000:9000 proreviewer:beta
 ```
 
-That is it! If everything went well are all the configurations are corrects, you should access the application on **http//localhost:3000**
+That is it! If everything went well and all the configurations are corrects, you should access the application on **http//localhost:3000**
 
 Do not hesitate to open an issue if needed.
 
