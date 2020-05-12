@@ -11,7 +11,7 @@ You can see a video of the example application in action.
 
 ##### Prerequisites
 
-You need to install Kafka Streaming Platform and Cassandra before starting this guide. Please read the section **Setting the infrastructrue** to setup **Kafka topics**, **Cassandra tables and materialized views**, and **Datastax Sink Connector**. 
+You need to install Kafka Streaming Platform and Cassandra before starting this guide. Please read the section **Setting the infrastructrue** of the [Fullstack Kafka post](http://fk.com) to setup **Kafka topics**, **Cassandra tables and materialized views**, and **Datastax Sink Connector**. 
 
 ##### Deployment
 
@@ -136,7 +136,7 @@ docker image build -t proreviewer:beta .
 
 8 - Run the application
 
-Again, make sure you went throug the section **Setting the infrastructrue** to setup **Kafka topics**, **Cassandra tables and materialized views**, and **Datastax Sink Connector** before running your container.
+Again, make sure you went throug the section **Setting the infrastructrue** of the [Fullstack Kafka post](http://fk.com) to setup **Kafka topics**, **Cassandra tables and materialized views**, and **Datastax Sink Connector** before running your container.
 
 ```sh
 docker container run -d --name proreviewer -p 3000:3000 -p 9000:9000 proreviewer:beta
@@ -147,6 +147,4 @@ That is it! If everything went well and all the configurations are corrects, you
 Do not hesitate to open an issue if needed.
 
 Good luck!
-
-
 
