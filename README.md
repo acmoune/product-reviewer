@@ -33,7 +33,7 @@ mkdir /path/to/docker-image
 mkdir /path/to/docker-image/src
 ```
 
-3 - build the client, and copy it to the docker-image's src folder
+3 - Copy the client to the docker-image's src folder
 
 ```sh
 cp -r product-reviewer-client /path/to/docker-image/src/
@@ -56,9 +56,9 @@ cp -r statistics/target/univrsal /path/to/docker-image/src/statistics
 cp webserver/target/universal/webserver-1.0.0.tgz /path/to/docker-image/src/
 ```
 
-Then, from the `/path/to/docker-image/src/` folder, extract the folder from the archive `webserver-1.0.0.tgz` and rename it to `webserver`
+Then, from the `/path/to/docker-image/src/` folder, extract the folder from the archive `webserver-1.0.0.tgz` and rename it to `webserver`, then delete the file `webserver-1.0.0.tgz`.
 
-By the end of this step, the `/path/to/docker-image/src/` folder most container five directories: `product-reviewer-client`, `security`, `reviews`, `statistics`, and `webserver`.
+By the end of this step, the `/path/to/docker-image/src/` folder most contain five directories: `product-reviewer-client`, `security`, `reviews`, `statistics`, and `webserver`.
 
 5 - Create a Dockerfile in the `/path/to/docker-image/` folder and put this content inside:
 
