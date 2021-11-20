@@ -1,6 +1,6 @@
 ### Backend part of the source code of the post [Fullstack Kafka](https://medium.com/@ironmeiner/fullstack-kafka-e735054adcd6)
 
-You can read [Fullstack Kafka](https://medium.com/@ironmeiner/fullstack-kafka-e735054adcd6) as a documentation for this repository, partiulary the section **Building the Microservices**.
+You can read [Fullstack Kafka](https://medium.com/@ironmeiner/fullstack-kafka-e735054adcd6) as a documentation for this repository, particulary the section **Building the Microservices**.
 
 You can see a video of the example application in action.
 
